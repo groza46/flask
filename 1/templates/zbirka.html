@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "sl">
+<head>
+    <title>Zbirka</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Seznam igralcev</h1>
+    {% if igralci%}
+        {% for igralec in igralci %}
+            <h2>{{igralec['ime']}} {{igralec['priimek']}}</h2>
+            <ul>
+                <li><strong>Pozicija:</strong>{{igralec['pozicija']}}</li>
+                <li><strong>Datum rojstva:</strong>{{igralec['rojstni_datum']}}</li>
+                <li><strong>Goli:</strong>{{igralec['goli']}}</li>
+                <li><strong>Asistence:</strong>{{igralec['asistence']}}</li>
+                <li><strong>Točke:</strong>{{igralec['tocke']}}</li>
+                <li><strong>Plus/Minus:</strong>{{igralec['plus_minus']}}</li>
+                <li><strong>Kazenske minute:</strong>{{igralec['kazenske_minute']}}</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+            <p>Nimaš vnešenih igralcev.</p><br>
+    {% endif %}
+    <a href = "/">Na začetno stran</a>
+    <a href = "/dodaj_igralca">Dodaj novega igralca</a>
+
+    
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

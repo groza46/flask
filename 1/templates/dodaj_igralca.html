@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "sl">
+<head>
+    <title>Dodajanje igralca</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Dodaj novega igralca</h1>
+    <form method = 'POST'>
+        Ime: <input type = "text" name = "ime" required><br>
+        Priimek: <input type = "text" name = "priimek" required><br>
+        Pozicija:
+            <select name = "pozicija">
+                <option></option>
+                <option value = "Napadalec">Napadalec</option>
+                <option value = "Branilec">Branilec</option>
+                <option value = "Vratar">Vratar</option>
+            </select>
+            <br>
+        Datum rojstva:<br>
+        Dan:  
+            <select name="dan_rojstva">
+                {% for dan in range(1, 32) %}
+                    <option value="{{ dan }}">{{ dan }}</option>
+                {% endfor %}
+        </select>
+        Mesec:  
+            <select name = "mesec_rojstva">
+                <option></option>
+                <option value = "januar">Januar</option>
+                <option value = "februar">Februar</option>
+                <option value = "marec">Marec</option>
+                <option value = "april">April</option>
+                <option value = "maj">Maj</option>
+                <option value = "junij">Junij</option>
+                <option value = "julij">Julij</option>
+                <option value = "avgust">Avgust</option>
+                <option value = "september">September</option>
+                <option value = "oktober">Oktober</option>
+                <option value = "november">November</option>
+                <option value = "december">December</option>
+            </select>  
+        Leto: 
+            <select name = "leto_rojstva">
+                {% for leto in range(2025,1889,-1)%}
+                    <option value = "{{leto}}">{{leto}}</option>
+                {% endfor %}
+            </select>
+        <br>
+        Goli: <input type = "number" name = "goli" value = "0" required><br>
+        Asistence: <input type = "number" name = "asistence" value = "0" required><br>
+        Plus/Minus: <input type = "number" name = "plus_minus" value = "0" required><br>
+        Kazenske minute <input type = "number" name = "kazenske_minute" value = "0" required><br>
+
+        <button type = "submit">Shrani</button><br>
+    </form>
+    <a href = "/">Na začetno stran</a>
+    <a href = "/zbirka">Na zbirko</a>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
